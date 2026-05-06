@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 const FILE_PATH = path.join(__dirname, "data", "quran.json");
-
+// get all shura
 app.get("/api/surahs", (req, res) => {
   try {
     if (!fs.existsSync(FILE_PATH)) {
@@ -34,7 +34,7 @@ app.get("/api/surahs", (req, res) => {
     res.status(500).json({ message: "No data available" });
   }
 });
-
+// dynamic shura use id
 app.get("/api/surah/:id", (req, res) => {
   try {
     if (!fs.existsSync(FILE_PATH)) {
@@ -55,9 +55,9 @@ app.get("/api/surah/:id", (req, res) => {
     res.status(500).json({ message: "server error " });
   }
 });
-
+// test route
 app.get("/", (req, res) => {
-  res.send("Quran Offline API Server is running ");
+  res.send("Quran Server is running ");
 });
 
 app.listen(PORT, () => {

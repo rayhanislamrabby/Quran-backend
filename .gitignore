@@ -24,6 +24,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# AI context files
+CLAUDE.md
+AGENTS.md
+
 # OS related files
 .DS_Store
 Thumbs.db
